@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Work+Sans:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Sigmar+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap');
+@mixin main_font{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+}
+@mixin tags_font{
+    color: saddlebrown;
+    text-decoration: none;
+    &:hover{
+        color: rgb(206, 194, 168);
+        transition: 0.1s;
+    }
+}
+@mixin post_font{
+    border-style: inset;
+    border-width: 1px;
+    width: 100%;
+    border-color: rgba(204, 175, 124, 0.171);
+    background-color: rgb(232, 233, 225);
+    text-align: center;
+    position: relative;
+    margin-bottom: 40px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    word-wrap: break-word;
+    -webkit-box-orient: vertical;
+    font-size: 15px;
+    line-height: 19px;
+}
+
+@mixin posts-section_title_font{
+    @include main_font;
+    margin-bottom: 5px;
+}
+@mixin posts-section_info_font{
+    padding-bottom: 10px;
+    font-size: 12px;
+}
+@mixin posts-section_img_font{
+    margin: 0 auto;
+    width: 100%;
+    img{
+        padding: 5px;
+        border: 1px solid #dddddd;
+        background: #eeeeee;
+    }
+}
+@mixin posts-section_text_font{
+    margin-top: 5px;
+    overflow: hidden;
+    font-size: 14px;
+    max-height: 10%;
+}
+@mixin button_font{
+    background-color: #dace68; 
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    &:hover{
+        background-color: rgb(170, 143, 86);
+        transition: 0.3s;
+    }
+}
+.main-container{
+    background-color: rgb(241, 241, 238);
+}
+
+.header{
+    display: flex;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #9ec3d4;
+    position: relative;
+    text-align: right;
+    background-image: linear-gradient(to right, red , yellow);
+
+    &_title-main{
+        width: 300px;
+        
+        a{
+            font: 22pt bold sans-serif;
+            font-family: 'Work Sans', sans-serif;
+            text-decoration: none;
+            span{
+                font: 28pt solid sans-serif;
+                color: #ffeb3b;
+                font-family: 'Bowlby One SC', cursive;
+                margin-bottom: 5px;
+                display: inline-block;
+            }
+        }
+    }
+
+    &_keep{
+        display: inline-block;
+        margin-top: 50px;
+        font-size: 18px;
+        font-family: 'Sigmar One', cursive;
+        opacity: 0.8;
+    }
+    &_title-img{
+        width: 150px;
+        opacity: 0.5;
+        
+
+    }
+
+}
+.menu{
+    height: 35px;
+    background-color: #dace68;
+    border-top: groove 1px;
+    width: 100%;
+
+    ul{
+        display: flex;
+        padding: 0;
+        justify-content: left;
+        margin: 0;
+        height: 100%;
+        padding: 0 10%;
+
+        li{
+            list-style-type: none;
+            padding-bottom: 10px;
+            font-size: 18px;
+            width: 100px;
+            height: 100%;
+            padding: 0 20px;
+            text-align: center;
+            
+            
+            &:hover{
+                background-color: rgb(131, 104, 45);
+                transition: 0.3s;
+            }
+            
+            a{
+                display: block;
+                text-decoration: none;
+                color: rgb(92, 53, 2);
+                vertical-align: middle;
+                line-height: 38px;
+            }
+        }
+        
+    }
+}
+.body-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10%;
+    margin-top: 20px;
+    
+    .onepost-container{
+        max-width: 580px;
+    }
+    .post-container{
+        width: 50%;
+        min-width: 235px;
+        
+    }
+    .oneposts-section{
+        @include post_font;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        &_title{
+            @include posts-section_title_font;
+        }
+        &_info{
+            @include posts-section_info_font;
+        }
+        &_img{
+            @include posts-section_img_font;
+        }
+        &_text{
+            @include posts-section_text_font;
+            overflow: visible;
+            max-height: 100%;
+        }
+        &_footer{
+            text-align: left;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            height: 14%;
+            padding-bottom: 10px;
+            &__tags{
+                a{
+                    @include tags_font;
+                }
+            }
+            &__button{
+                @include button_font;
+                padding: 10px 45px;
+            }
+        }
+    }
+    .posts-section{
+        @include post_font;
+
+        &_title{
+            @include posts-section_title_font;
+        }
+        &_info{
+            @include posts-section_info_font;
+        }
+        &_img{
+            @include posts-section_img_font;
+        }
+        &_text{
+            @include posts-section_text_font;
+        }
+        &_footer{
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            margin-top: 10px;
+            &__tags{
+                a{
+                    @include tags_font;
+                }
+            }
+            &__button{
+                @include button_font;
+            }
+        }
+    }
+    .tags-section{
+        border-right-color: #fcfafa;
+        border-right-style: ridge; 
+        border-right-width: 2px;
+        border-left-color: #fcfafa;
+        border-left-style: ridge;
+        border-left-width: 2px;
+        width: 15%;
+        margin-left: 30px;
+        margin-top: -20px;
+        background-color: rgb(228, 225, 214);
+        min-width: 100px;
+        max-width: 200px;
+        text-align: center;
+        .tags-section_wraper{
+            position: sticky;
+            top: 0;
+            &_category{
+                margin-top: 15px;
+                ul{
+                    list-style-type: none;
+                    padding: 0;
+                    li{
+                        display: block;
+                        padding: 5px 0 3px 0;
+                        text-decoration: none;
+                        border-bottom: 1px solid #d6d6d6;
+                        a{
+                            @include tags_font;
+                        }
+                    }
+                }
+            }
+            &_archives{
+                ul{
+                    list-style-type: none;
+                    padding: 0;
+                    li{
+                        display: block;
+                        padding: 5px 0 3px 0;
+                        text-decoration: none;
+                        border-bottom: 1px solid #d6d6d6;
+                        a{
+                            @include tags_font;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #b3a671;
+    color: white;
+    text-align: center;
+    height: 60px;
+    line-height: 4em;
+    border-top: 5px solid #b4995d;
+    margin-top: 1px;
+  }
