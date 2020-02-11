@@ -34,6 +34,8 @@
   .header_title-img {
     width: 150px;
     opacity: 0.5; }
+    .header_title-img img {
+      width: 70%; }
 
 .menu {
   height: 35px;
@@ -116,7 +118,8 @@
       .body-container .oneposts-section_img img {
         padding: 5px;
         border: 1px solid #dddddd;
-        background: #eeeeee; }
+        background: #eeeeee;
+        width: 70%; }
     .body-container .oneposts-section_text {
       margin-top: 5px;
       overflow: hidden;
@@ -182,7 +185,8 @@
       .body-container .posts-section_img img {
         padding: 5px;
         border: 1px solid #dddddd;
-        background: #eeeeee; }
+        background: #eeeeee;
+        width: 70%; }
     .body-container .posts-section_text {
       margin-top: 5px;
       overflow: hidden;
